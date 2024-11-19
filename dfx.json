@@ -1,0 +1,38 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "terrapulse_backend": {
+      "candid": "src/terrapulse_backend/terrapulse_backend.did",
+      "package": "terrapulse_backend",
+      "type": "rust"
+    },
+    "terrapulse_frontend": {
+      "dependencies": [
+        "terrapulse_backend"
+      ],
+      "source": [
+        "src/terrapulse_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "terrapulse_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
